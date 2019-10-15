@@ -1,0 +1,46 @@
+
+@import url('https://fonts.googleapis.com/css?family=PT+Sans&display=swap');
+
+body{
+	font-family: 'PT Sans', sans-serif;
+	background-image: url('road.jpg') ;
+	color:white;
+}
+#img
+{
+	height: 50px;
+	width: 50px;
+	border-radius: 25px;
+}
+nav
+{
+	background: rgb(0,0,0,0);
+}
+.nav-link
+{
+	color:white; !important
+}
+.nav-link:hover
+{
+	color:white; !important
+}
+.item:hover
+{
+	background-color: #42b883;
+}
+.link:hover
+{
+	color: white; !important
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.content{
+	background: rgb(0,0,0,0.5);
+	text-align: left;
+	margin:200px auto;
+	padding:30px;
+	height: 300px;
+	width: 40%;
+}

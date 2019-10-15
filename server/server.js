@@ -33,14 +33,14 @@ app.get('/registration',(req,res)=>{
 app.post('/signup',(req,res)=>{
   var user=req.body.username;
   var pass=req.body.spass;
-
+  var ad=req.body.address;
     var model1 = require(__dirname+'/saveuser.js');
 
 
     var L = mongoose.model('s', model1, 'test');
 
     // a document instance
-    var u = new L({ username:user, password:pass });
+    var u = new L({ username:user, password:pass, address:ad });
 
     // save model to database
     u.save(function (err,L) {
@@ -58,14 +58,18 @@ app.post('/login',(req,res)=>{
   L.findOne({
     'username': user,
     'password':pass}, function(err, us) {
-      // hanlde err..
+
       if (us) {
-        res.sendFile(publicpath+'/success.html');
+        res.sendFile(publicpath+'/bvp.html');
       } else {
         res.sendFile(publicpath+'/logerror.html');
       }
    })
 
+})
+
+app.get('/points',(req,res)=>{
+  res.sendFile(publicpath+'/points.html')
 })
 
 app.listen(3000,(req,res)=>{

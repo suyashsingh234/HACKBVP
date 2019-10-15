@@ -4,7 +4,7 @@ var model1 =new mongoose.Schema({
   // email: { type: String, required: false},
 	// phone: { type: Number, required: false},
   // gender: { type: String, required: false},
-	// address: { type: String, required: false},
+	address: { type: String, required: false},
   password: { type: String, required: false}
 });
 module.exports = model1;
