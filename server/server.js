@@ -22,7 +22,7 @@ var db=mongoose.connection;
 
 
 app.get('/',(req,res)=>{
-	res.send(publicpath+'/home.html')
+	res.redirect('/registration')
 });
 
 app.get('/registration',(req,res)=>{
