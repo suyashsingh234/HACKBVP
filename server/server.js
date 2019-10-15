@@ -72,6 +72,7 @@ app.get('/points',(req,res)=>{
   res.sendFile(publicpath+'/points.html')
 })
 
-app.listen(3000,(req,res)=>{
+const port=process.env.PORT || 3000;
+app.listen(port,(req,res)=>{
   console.log("run");
 })
