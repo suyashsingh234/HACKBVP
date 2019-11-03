@@ -11,9 +11,9 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 }));
 app.use(express.json());       // to support JSON-encoded bodies
-app.use(express.urlencoded()); // to support URL-encoded bodies
+app.use(express.urlencoded({extended:false})); // to support URL-encoded bodies
 
-
+var un="";
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/test', {
   useNewUrlParser: true
@@ -40,7 +40,7 @@ app.post('/signup',(req,res)=>{
     var L = mongoose.model('s', model1, 'test');
 
     // a document instance
-    var u = new L({ username:user, password:pass, address:ad });
+    var u = new L({ username:user, password:pass, address:ad, request:"false" });
 
     // save model to database
     u.save(function (err,L) {
@@ -50,22 +50,38 @@ app.post('/signup',(req,res)=>{
  res.send(path.join(publicpath,'/user.html'));
 });
 
+      var model1 = require(__dirname+'/saveuser.js');
+
 app.post('/login',(req,res)=>{
   var user=req.body.username;
   var pass=req.body.lpass;
-    var model1 = require(__dirname+'/saveuser.js');
   var L = mongoose.model('s', model1, 'test');
   L.findOne({
     'username': user,
     'password':pass}, function(err, us) {
-
       if (us) {
-        res.sendFile(publicpath+'/bvp.html');
+          un=us.username;
+        if(us.request=="false")
+          res.sendFile(publicpath+'/bvp.html');
+        else
+          res.sendFile(publicpath+'/bvp2.html');
       } else {
         res.sendFile(publicpath+'/logerror.html');
       }
    })
 
+})
+
+app.get('/bvp2',(req,res)=>{
+   var L = mongoose.model('s', model1, 'test');
+   L.updateOne({
+     'username': un,
+   },{
+     request:"true"
+   }, function(err, count) {
+           if (err) return next(err);
+ })
+  res.sendFile(publicpath+'/bvp2.html');
 })
 
 app.get('/points',(req,res)=>{

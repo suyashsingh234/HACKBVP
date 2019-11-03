@@ -5,6 +5,7 @@ var model1 =new mongoose.Schema({
 	// phone: { type: Number, required: false},
   // gender: { type: String, required: false},
 	address: { type: String, required: false},
-  password: { type: String, required: false}
+  password: { type: String, required: false},
+  request:{type:String, required:true}
 });
 module.exports = model1;
