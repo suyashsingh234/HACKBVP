@@ -47,10 +47,10 @@ app.post('/signup',(req,res)=>{
       if (err) return console.error(err);
     });
 
- res.send(path.join(publicpath,'/user.html'));
+ res.sendFile(publicpath+'/bvp.html');
 });
 
-      var model1 = require(__dirname+'/saveuser.js');
+var model1 = require(__dirname+'/saveuser.js');
 
 app.post('/login',(req,res)=>{
   var user=req.body.username;
