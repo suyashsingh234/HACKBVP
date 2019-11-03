@@ -1,0 +1,74 @@
+
+body{
+	font-family: 'PT Sans', sans-serif;
+	background:#80B8F0 ;
+	color:white;
+}
+.list {
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+
+}
+
+/* line 213, ../sass/patient.scss */
+.ele {
+  background: rgb(0,0,0,0.5);
+
+  width: 95%;
+  padding: 20px 50px 25px 10rem;
+  margin:20px auto;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  line-height: 1.8em;
+  font-size: 1.5rem;
+  border-radius: 12px;
+}
+/* line 226, ../sass/patient.scss */
+.ele:hover {
+  box-shadow: 15px 10px 20px rgba(0, 255, 0, 0.19), 0 6px 6px rgba(0, 255, 0, 0.23);
+}
+
+/* line 231, ../sass/patient.scss */
+.labels {
+  width: 45%;
+}
+
+/* line 234, ../sass/patient.scss */
+img {
+  height: 5em;
+  margin: 0px 200px;
+}
+.button {
+  border: 0;
+  display: inline-block;
+  border-radius: 99px;
+  padding: 15px 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 1rem 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background: #1ab188;
+  color: #ffffff;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+}
+/* line 193, ../sass/patient.scss */
+.button:hover, .button:focus {
+  background-color: #179b77;
+  color: #ffffff;
+}
+
+/* line 198, ../sass/patient.scss */
+.button-block {
+  text-align: center;
+  width: 30%;
+}
+
+.btn{
+  display: flex;
+  flex-direction: row;
+}
