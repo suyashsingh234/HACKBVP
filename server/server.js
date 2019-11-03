@@ -61,7 +61,9 @@ app.post('/login',(req,res)=>{
     'password':pass}, function(err, us) {
       if (us) {
           un=us.username;
-        if(us.request=="false")
+        if(us.username=="admin")
+          res.sendFile(publicpath+'/admin.html')
+        else if(us.request=="false")
           res.sendFile(publicpath+'/bvp.html');
         else
           res.sendFile(publicpath+'/bvp2.html');
