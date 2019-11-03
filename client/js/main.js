@@ -69,6 +69,7 @@
             if(radio[i].checked)
               {
                 check=true;
+                break;
               } 
         }
         if(check==false){
